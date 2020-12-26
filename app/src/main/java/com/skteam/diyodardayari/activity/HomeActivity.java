@@ -22,6 +22,7 @@ import com.skteam.diyodardayari.databinding.ActivityHomeBinding;
 import com.skteam.diyodardayari.databinding.ActivityLoginBinding;
 import com.skteam.diyodardayari.fragments.HomeFragment;
 import com.skteam.diyodardayari.fragments.MyServiceFragment;
+import com.skteam.diyodardayari.fragments.ProfileFragment;
 
 public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivityTest";
@@ -67,6 +68,9 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_my_services:
                         setFragment(new MyServiceFragment(), "my_service_fragment");
+                        break;
+                    case R.id.nav_profile:
+                        setFragment(new ProfileFragment(), "profile_fragment");
                         break;
 
                 }
