@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">DiyodarDayari</string>
+
+    <!--    Login Page    -->
+    <string name="privacy_terms_of_service">Privacy * Terms of Service</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="or">or</string>
+    <string name="_91">+91</string>
+    <string name="enter_number">Enter Number</string>
+
+    <!--    OTP   -->
+    <string name="enter_the_otp_sent_to">Enter the OTP sent to</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="didn_t_receive_the_otp">Didn\'t receive the OTP?</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="verify_proceed"><![CDATA[Verify & Proceed]]></string>
+    <string name="go_back">Go Back</string>
+    <string name="phone_authentication">Phone Authentication</string>
+    <string name="detecting_otp_60">Detecting OTP : 60</string>
+
+    <!--    Bottom Nav  -->
+    <string name="profile">Profile</string>
+    <string name="my_services">My Services</string>
+    <string name="home">Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_service_found">No Service Found</string>
+</resources>

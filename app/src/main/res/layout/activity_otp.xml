@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".activity.OtpActivity">
+
+    <ImageButton
+        android:contentDescription="@string/go_back"
+        android:layout_gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_left_arrow"
+        android:background="@android:color/transparent"
+        android:padding="20dp"
+        android:id="@+id/ibBack"/>
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_text_message"
+    android:contentDescription="@string/phone_authentication" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/otp_verification"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/_18ssp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_the_otp_sent_to"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/_14ssp"
+        android:layout_marginTop="2dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_detecting_otp_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/detecting_otp_60"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black" />
+
+
+    <in.aabhasjindal.otptextview.OtpTextView
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        app:height="40dp"
+        app:width="40dp"
+
+        app:bar_enabled="true"
+        app:bar_height="1dp"
+        app:bar_active_color="@color/colorText"
+        app:length="6"
+        app:otp_text_size="24dp"/>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/didn_t_receive_the_otp"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/_12ssp"
+            />
+        <TextView
+            android:id="@+id/tvResendOtp"
+            android:enabled="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resend_otp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/colorRedLight"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginStart="10dp"
+            />
+
+    </LinearLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvVerify"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        app:cardBackgroundColor="@color/colorText"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_google"-->
+<!--                android:layout_marginEnd="10dp"/>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/verify_proceed"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                tools:ignore="AllCaps" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

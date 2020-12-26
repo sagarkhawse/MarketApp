@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1050867285680",
+    "project_id": "diyodardayari",
+    "storage_bucket": "diyodardayari.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050867285680:android:77db92f179ae5035b4c575",
+        "android_client_info": {
+          "package_name": "com.skteam.diyodardayari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050867285680-58j7d8i18p9gqkn03utgjoc6oje35ktl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXs_ywTJP_lTAocURSe5tF92bpG30bW7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050867285680-58j7d8i18p9gqkn03utgjoc6oje35ktl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
