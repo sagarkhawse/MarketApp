@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 
 public class Variables {
 
-    private final static String DOMAIN = "https://androappdev.xyz/";
-    private final static String PATH = "DiyodarDayari/";
+    public final static String DOMAIN = "https://androappdev.xyz/";
+    public final static String PATH = "DiyodarDayari/";
     public final static String API = "API/";
     public final static String BASE_URL = DOMAIN + PATH + API;
     public final static String IMAGE_URL = DOMAIN + PATH;
@@ -19,6 +19,9 @@ public class Variables {
     public final static String phone = "phone";
     public final static String user_id = "user_id";
     public final static String user_dp = "user_dp";
+
+    public  static String category_id = "";
+
 
 
 

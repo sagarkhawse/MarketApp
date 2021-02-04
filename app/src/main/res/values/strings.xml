@@ -20,10 +20,49 @@
     <string name="detecting_otp_60">Detecting OTP : 60</string>
 
     <!--    Bottom Nav  -->
-    <string name="profile">Profile</string>
-    <string name="my_services">My Services</string>
+    <string name="my_services">Services</string>
     <string name="home">Home</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_service_found">No Service Found</string>
+    <string name="add_image">Add Image</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_whatsapp_number">Enter WhatsApp Number</string>
+    <string name="save_details">Save Details</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_shop_name">Enter Shop Name</string>
+    <string name="enter_shop_address">Enter Shop Address</string>
+    <string name="enter_your_services">Enter Your Services</string>
+    <string name="enter_business_description">Enter Business Description</string>
+    <string name="enter_shop_time">Enter Shop Time</string>
+    <string name="call">Call</string>
+    <string name="shops">Shops</string>
+    <string name="profile">Profile</string>
+    <string name="more_details">More Details</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="email">Email</string>
+    <string name="shop_address">Shop Address</string>
+    <string name="business_description">Business Description</string>
+
+
+<!--    Admob  ads  -->
+<!--    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>-->
+<!--    <string name="admob_banner_ad">ca-app-pub-3940256099942544/6300978111</string>-->
+
+    <string name="admob_app_id">ca-app-pub-4447505599100719~8751978673</string>
+    <string name="admob_banner_ad">ca-app-pub-4447505599100719/4477864150</string>
+
+
+    <string name="more">More</string>
+
+
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_us">About us</string>
+    <string name="share_this_app">Share</string>
+    <string name="rate_this_app">Rate us</string>
+    <string name="contact_us">Contact us</string>
+    <string name="logout">Logout</string>
+    <string name="contact_email">bookwormhelpdesk@gmail.com</string>
+
 </resources>

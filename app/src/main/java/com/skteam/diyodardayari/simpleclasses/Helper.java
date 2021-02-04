@@ -439,13 +439,12 @@ public class Helper {
 //        }.getType()));
 //    }
 
-    public static void saveProfileMe(SharedPreferenceUtil sharedPreferenceUtil, User userMe) {
+    public static void saveProfileDetails(SharedPreferenceUtil sharedPreferenceUtil, User userMe) {
         sharedPreferenceUtil.setStringPreference(Constants.KEY_USER_PROFILE, new Gson().toJson(userMe, new TypeToken<User>() {
         }.getType()));
-        setLoggedInUser(sharedPreferenceUtil, userMe);
     }
 
-    public static User getProfileMe(SharedPreferenceUtil sharedPreferenceUtil) {
+    public static User getProfileDetails(SharedPreferenceUtil sharedPreferenceUtil) {
         User toReturn = null;
         String savedUserString = sharedPreferenceUtil.getStringPreference(Constants.KEY_USER_PROFILE, null);
         if (savedUserString != null)

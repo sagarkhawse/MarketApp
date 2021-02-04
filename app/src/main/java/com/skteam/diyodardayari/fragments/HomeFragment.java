@@ -31,9 +31,9 @@ public class HomeFragment extends Fragment {
         View view = binding.getRoot();
         context = getContext();
         singleton = ApiCallsSingleton.getInstance(context);
-        singleton.loadHomeData("service", binding,context);
         singleton.loadHomeData("category", binding,context);
         singleton.loadHomeData("slider", binding,context);
+        singleton.loadUserList(context,binding);
 
         return view;
     }

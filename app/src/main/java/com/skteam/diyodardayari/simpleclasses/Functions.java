@@ -3,6 +3,7 @@ package com.skteam.diyodardayari.simpleclasses;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.media.MediaMetadataRetriever;
@@ -19,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+
+import com.skteam.diyodardayari.R;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -45,7 +48,19 @@ import okhttp3.RequestBody;
 public class Functions {
 
     private static final String TAG = "FunctionsTest";
+    public static void startEmailIntent(Activity context) {
 
+        try {
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto",context.getString(R.string.contact_email), null));
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Body");
+            context.startActivity(Intent.createChooser(emailIntent, "Send email..."));
+        } catch (Exception e) {
+            e.printStackTrace ();
+        }
+
+    }
 
     private static final DateFormat mDateFormat =
             new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);

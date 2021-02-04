@@ -29,7 +29,7 @@
         app:sliderIndicatorRadius="1dp"
         app:sliderIndicatorSelectedColor="#DC1313"
         app:sliderIndicatorUnselectedColor="#073553"
-        app:sliderScrollTimeInSec="1"
+        app:sliderScrollTimeInSec="3"
    />
 
 
@@ -37,14 +37,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/rvCategories"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
     android:orientation="horizontal"
     />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rvServices"
+        android:id="@+id/rvUsers"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
         android:layout_marginTop="10dp"

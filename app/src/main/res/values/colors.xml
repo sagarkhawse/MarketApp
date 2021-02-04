@@ -9,11 +9,13 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorText">#804FEB</color>
+    <color name="colorBlue">#2979FF</color>
 
 
-    <color name="colorRed">#F42971</color>
+    <color name="colorRed">#EA002D</color>
     <color name="colorRedLight">#F6EFF1</color>
     <color name="colorLightGray">#A8A2A4</color>
+    <color name="colorGreen">#0AAF5E</color>
 
 
 </resources>
