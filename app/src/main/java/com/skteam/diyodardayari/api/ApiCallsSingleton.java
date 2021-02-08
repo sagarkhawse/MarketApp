@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.service.autofill.UserData;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -150,6 +152,22 @@ public class ApiCallsSingleton {
                                     case "category":
                                         CategoryAdapter catAdapter = new CategoryAdapter(context, serverResponse.result);
                                         binding.rvCategories.setAdapter(catAdapter);
+                                        binding.etSearchView.addTextChangedListener(new TextWatcher() {
+                                            @Override
+                                            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                                            }
+
+                                            @Override
+                                            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                                                catAdapter.getFilter().filter(charSequence);
+                                            }
+
+                                            @Override
+                                            public void afterTextChanged(Editable editable) {
+
+                                            }
+                                        });
                                         break;
                                 }
 
@@ -184,9 +202,25 @@ public class ApiCallsSingleton {
                                     }
                                 }
 
-                                binding.rvShops.setAdapter(new UserListAdapter(context, shopList));
+                                UserListAdapter adapter = new UserListAdapter(context, shopList);
+                                binding.rvShops.setAdapter(adapter);
                                 binding.progressBar.setVisibility(View.GONE);
+                                binding.etSearchView.addTextChangedListener(new TextWatcher() {
+                                    @Override
+                                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+                                    }
+
+                                    @Override
+                                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                                        adapter.getFilter().filter(charSequence);
+                                    }
+
+                                    @Override
+                                    public void afterTextChanged(Editable editable) {
+
+                                    }
+                                });
 
                             } else {
                                 Functions.ShowToast(context, resBody.error_msg);

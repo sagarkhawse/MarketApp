@@ -4,10 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ServiceFragment">
+    >
 
+<androidx.cardview.widget.CardView
+    android:id="@+id/cvSearch"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="0dp"
+    android:layout_margin="15dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/colorRedLight">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_service"
+        android:padding="15dp"
+        android:backgroundTint="@android:color/transparent"
+        android:drawablePadding="15dp"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:id="@+id/etSearchView"
+        />
+
+</androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/cvSearch"
         android:id="@+id/rvMyServices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

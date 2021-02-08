@@ -19,6 +19,7 @@ public class Variables {
     public final static String phone = "phone";
     public final static String user_id = "user_id";
     public final static String user_dp = "user_dp";
+    public final static String skipped = "skipped";
 
     public  static String category_id = "";
 

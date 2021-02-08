@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,17 +26,20 @@ import com.skteam.diyodardayari.models.User;
 import com.skteam.diyodardayari.simpleclasses.Helper;
 import com.skteam.diyodardayari.simpleclasses.SharedPreferenceUtil;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.DataViewHolder> {
+public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.DataViewHolder> implements Filterable {
     private static final String TAG = "BlogAdapterTest";
     private Context context;
-    private List<User> list;
+    private List<User> list,listAll;
 
 
     public UserListAdapter(Context context, List<User> list) {
         this.context = context;
         this.list = list;
+        listAll = new ArrayList<>(list);
     }
 
     @NonNull
@@ -92,6 +97,37 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.DataVi
     public int getItemCount() {
         return list.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<User> filteredList = new ArrayList<>();
+            if (charSequence.toString().isEmpty()) {
+                filteredList.addAll(listAll);
+            }else {
+                for (User obj : listAll){
+                    if (obj.shop_name.toLowerCase().contains(charSequence.toString().toLowerCase())){
+                        filteredList.add(obj);
+                    }
+                }
+            }
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filteredList;
+            return filterResults;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+list.clear();
+list.addAll((Collection<? extends User>) filterResults.values);
+notifyDataSetChanged();
+        }
+    };
 
     static class DataViewHolder extends RecyclerView.ViewHolder {
         ItemShopsBinding binding;

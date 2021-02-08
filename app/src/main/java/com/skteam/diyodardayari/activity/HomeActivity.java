@@ -48,6 +48,7 @@ public class HomeActivity extends BaseActivity {
     public ActivityHomeBinding binding;
     private String tag;
     private static final String TAG = "HomeActivity";
+    private int user_skipped = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +56,19 @@ public class HomeActivity extends BaseActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        initUserData();
+        Variables.sharedPreferences = getSharedPreferences("SKIP", MODE_PRIVATE);
+        user_skipped = Variables.sharedPreferences.getInt(Variables.skipped, 0);
+        if (user_skipped == 1) {
+            setFragment(new HomeFragment(), "home_fragment");
+        } else {
+            initUserData();
+            check_if_registered_user_require_profile_update();
+        }
+
 
         initViewsClicks();
         loadBannerAd();
-        check_if_registered_user_require_profile_update();
+
 
     }
 
@@ -107,7 +116,31 @@ public class HomeActivity extends BaseActivity {
                         setFragment(new AllServicesFragment(), "all_services_fragment");
                         break;
                     case R.id.nav_profile:
-                        setFragment(new ProfileFragment(), "profile_fragment");
+                        if (user_skipped==1){
+                            new MaterialAlertDialogBuilder(this,R.style.AlertDialogTheme)
+                                    .setMessage("Please log in your account first")
+                                    .setPositiveButton("Log in", new DialogInterface.OnClickListener() {
+                                        @SuppressLint("CommitPrefEdits")
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            Variables.sharedPreferences= getSharedPreferences("SKIP",MODE_PRIVATE);
+                                            Variables.editor = Variables.sharedPreferences.edit();
+                                            Variables.editor.putInt(Variables.skipped,0);
+                                            Variables.editor.apply();
+                                            startActivity(new Intent(HomeActivity.this,LoginActivity.class));
+                                            finish();
+                                        }
+                                    })
+                                    .setNegativeButton("Maybe Later", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.dismiss();
+                                        }
+                                    }).show();
+                        }else{
+                            setFragment(new ProfileFragment(), "profile_fragment");
+                        }
+
                         break;
                     case R.id.nav_more:
                         showMenuOptions(binding.bottomNav.findViewById(R.id.nav_more));

@@ -27,6 +27,7 @@ import com.skteam.diyodardayari.api.ApiCallsSingleton;
 import com.skteam.diyodardayari.databinding.ActivityLoginBinding;
 import com.skteam.diyodardayari.simpleclasses.Constants;
 import com.skteam.diyodardayari.simpleclasses.Functions;
+import com.skteam.diyodardayari.simpleclasses.Variables;
 
 import java.util.Objects;
 
@@ -52,9 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(activity);
         mAuth = FirebaseAuth.getInstance();
         singleton = ApiCallsSingleton.getInstance(activity);
-
+        Variables.sharedPreferences= getSharedPreferences("SKIP",MODE_PRIVATE);
         mUser = mAuth.getCurrentUser();
-        if (mUser != null) {
+        if (mUser != null || Variables.sharedPreferences.getInt(Variables.skipped,0)==1) {
             startActivity(new Intent(activity, HomeActivity.class));
             finish();
         }
@@ -85,6 +86,19 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.google.setOnClickListener(view -> signIn());
+        binding.tvSkip.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("CommitPrefEdits")
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity,HomeActivity.class);
+
+                Variables.editor = Variables.sharedPreferences.edit();
+                Variables.editor.putInt(Variables.skipped,1);
+                Variables.editor.apply();
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void openOtpActivity() {

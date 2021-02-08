@@ -64,5 +64,9 @@
     <string name="contact_us">Contact us</string>
     <string name="logout">Logout</string>
     <string name="contact_email">bookwormhelpdesk@gmail.com</string>
+    <string name="search_service">search service</string>
+    <string name="search_category">search category</string>
+    <string name="search_shop">Search Shop</string>
+    <string name="skip"><u>Skip</u></string>
 
 </resources>

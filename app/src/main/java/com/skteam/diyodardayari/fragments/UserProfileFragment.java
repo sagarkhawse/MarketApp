@@ -44,7 +44,6 @@ public class UserProfileFragment extends BaseFragment {
         binding = FragmentUserProfileBinding.inflate(getLayoutInflater());
 
         initData();
-        my_user_id = userData.user_id;
         if (profileData != null) {
             userData = profileData;
         }
